@@ -7,7 +7,6 @@ A quick and concise package to help you make terminal menus fast. It allows user
 Ease of use:
 
 .. code-block:: python
-    :linenos:
 
     >>> import seaturtle_menu as stm
     >>> menu = stm.menu.Menu(
@@ -23,3 +22,37 @@ Ease of use:
     b. Say bye
     Choice:
 
+Features
+--------
+
+- Write menus quickly
+- Use custom bullets
+- Code that warns you if you use incorrect types
+
+Documentation
+-------------
+
+You can find the documentation of the 2 major objects here:
+
+.. toctree::
+    :maxdepth: 1
+
+    menu
+    bullets
+
+Installation
+------------
+
+seaturtle_menu is available on PyPI, and can be installed by running the following command::
+
+    $ python -m pip install seaturtle_menu
+
+Or, get the source code from git::
+
+    $ git clone https://github.com/tathyagarg/seaturtle_menu
+
+
+License
+-------
+
+This project is licensed under the MIT license.
