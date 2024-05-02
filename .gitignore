@@ -1,0 +1,5 @@
+/build
+/dist
+.python-version
+seaturtle_menu.egg-info
+__pycache__
