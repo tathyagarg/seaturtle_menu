@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "seaturtle_menu"
+version = "0.1.0.dev0"
+dependencies = []
+requires-python = ">=3.12"
+authors = [
+  {name = "Tathya Garg", email = "tathya.garg@gmail.com"},
+]
+maintainers = [
+  {name = "Tathya Garg", email = "tathya.garg@gmail.com"},
+]
+description = "Make effective terminal menus quickly and concisely."
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["menu"]
+classifiers = []
+
+[project.urls]
+Homepage = "https://github.com/tathyagarg/seaturtle_menu"
+Documentation = "https://github.com/tathyagarg/seaturtle_menu"
+Repository = "https://github.com/tathyagarg/seaturtle_menu"
+Changelog = "https://github.com/tathyagarg/seaturtle_menu/blob/main/CHANGELOG.md"
