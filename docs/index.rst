@@ -34,11 +34,8 @@ Documentation
 
 You can find the documentation of the 2 major objects here:
 
-.. toctree::
-    :maxdepth: 1
-
-    menu
-    bullets
+1. :ref:`Menu <menu>`
+2. :ref:`Bullets <bullets>`
 
 Installation
 ------------
