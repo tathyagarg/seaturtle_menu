@@ -37,12 +37,15 @@ class Menu:
         self.prompts: list[str] = list(action_prompt_map.keys())
         self.actions: list[Callable] = list(action_prompt_map.values())
         if isinstance(_bullets, Bulletable):
-            width: int = len(self.prompts)
-            while width:
-                width //= _bullets.charset_len
+            size: int = len(self.prompts)
+            width = 0
+            while size:
+                width += 1
+                size //= _bullets.charset_len + 1
 
-            width += 1
             self.width = width
+            print(width, len(self.prompts), _bullets.charset_len)
+
             self.bullets = _bullets.from_width(self.width)
         else:
             self.width = _bullets.width
