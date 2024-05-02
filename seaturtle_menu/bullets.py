@@ -16,18 +16,13 @@ class Bullets:
         self.start = start
 
     def make_iter(self, width: int = 1) -> list[str]:
-        """
-        Make a list of bullets with the desired width.
+        """Make a list of bullets with the desired width.
 
-        Args:
-            width: The width of each bullet to return, in terms of bullet count.
+        :param width: The width of each bullet to return, in terms of bullet count (default is 1)
+        :type width: int
 
-        Returns:
-            A list of bullets with the desired width
-
-        Example usage:
-            >>> Bullets('abc', width=2).make_iter(2)
-            ['aa', 'ab', 'ac', 'ba', 'bb', 'bc', 'ca', 'cb', 'cc']
+        :returns: A list of bullets with the desired width
+        :rtype: list[str]
         """
         if width == 1: return self.charset
 
@@ -58,14 +53,13 @@ class Bulletable:
         self.charset_len = charset_len
 
     def from_width(self, width: int) -> Bullets:
-        """
-        Make a Bullets object after you know the desired width.
+        """Make a Bullets object after you know the desired width.
 
-        Args:
-            width: The desired width of the Bullets object
+        :param width: The desired width of the Bullets object
+        :type width: int
 
-        Returns:
-            A Bullets object from the maker function with the given width.
+        :returns: A Bullets object from the maker function with the given width.
+        :rtype: Bullets
         """
         return self.maker(width)
 

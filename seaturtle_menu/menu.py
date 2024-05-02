@@ -56,11 +56,10 @@ class Menu:
         self.greeting = greeting
 
     def get_verified_input(self) -> str:
-        """
-        Gets user input that is guaranteed to be one of the bullets.
+        """Gets user input that is guaranteed to be one of the bullets.
 
-        Returns:
-            A user choice that is in the bullets.
+        :returns: A user choice that is in the bullets.
+        :rtype: str
         """
         choice = input('Choice: ')
         while choice not in self.bullets_as_list and \
@@ -71,12 +70,10 @@ class Menu:
         return self.converter(choice)
 
     def run(self) -> Any:
-        """
-        Runs the menu.
-        Prints out the greeting, options, gets a verified user input, and performs the associated action.
+        """Runs the menu. Prints out the greeting, options, gets a verified user input, and performs the associated action.
 
-        Returns:
-            The value returned by the function associated to the user's choice.
+        :returns: The value returned by the function associated to the user's choice.
+        :rtype: Any
         """
         if self.greeting:
             print(self.greeting)

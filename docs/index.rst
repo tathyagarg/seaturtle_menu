@@ -34,7 +34,7 @@ Documentation
 
 You can find the documentation of the 2 major objects here:
 
-1. Menu can be found on :ref:`Menu <menu>`
+1. Menu can be found on :ref:`Menu <modules>`
 2. Bullets can be found on :ref:`Bullets <bullets>`
 
 Installation
