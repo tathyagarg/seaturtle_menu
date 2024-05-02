@@ -62,11 +62,11 @@ class Menu:
         Returns:
             A user choice that is in the bullets.
         """
-        choice = input('>>> ')
+        choice = input('Choice: ')
         while choice not in self.bullets_as_list and \
                 self.converter(choice) not in self.bullets_as_list:
             print('Invalid!')
-            choice = input('>>> ')
+            choice = input('Choice: ')
 
         return self.converter(choice)
 
