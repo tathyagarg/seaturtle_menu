@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.1.0.dev0'
+VERSION = '0.1.1.dev0'
 DESCRIPTION = 'Make effective terminal menus quickly and concisely.'
 
 setup(
