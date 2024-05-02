@@ -44,7 +44,6 @@ class Menu:
                 size //= _bullets.charset_len + 1
 
             self.width = width
-            print(width, len(self.prompts), _bullets.charset_len)
 
             self.bullets = _bullets.from_width(self.width)
         else:
