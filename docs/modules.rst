@@ -1,3 +1,5 @@
+.. _modules:
+
 seaturtle_menu
 ==============
 
