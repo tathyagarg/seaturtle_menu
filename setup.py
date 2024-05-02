@@ -11,4 +11,10 @@ setup(
     description=DESCRIPTION,
     packages=find_packages(),
     keywords=['menu'],
+    project_urls={
+        "Homepage": "https://github.com/tathyagarg/seaturtle_menu",
+        "Documentation": "https://github.com/tathyagarg/seaturtle_menu",
+        "Repository": "https://github.com/tathyagarg/seaturtle_menu",
+        "Changelog": "https://github.com/tathyagarg/seaturtle_menu/blob/main/CHANGELOG.md"
+    }
 )
