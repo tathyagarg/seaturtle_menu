@@ -10,6 +10,7 @@ class Menu:
             _bullets: Bullets | Bulletable,
             action_prompt_map: dict[str, Callable | None],
             *,
+            restart_after_action: bool = False,
             bracketing: str = '.',
             use_default_function: bool = False,
             input_converter: Callable[[str], str] = None,
@@ -17,7 +18,7 @@ class Menu:
     ) -> None:
         input_converter = input_converter or (lambda text: text)
 
-        verify_type(use_default_function, bool)
+        verify_type(_bullets, (Bullets, Bulletable))
         verify_type(action_prompt_map, dict)
         for k, v in action_prompt_map.items():
             verify_type(k, str)
@@ -30,8 +31,11 @@ class Menu:
                     f"Expected Callable value as value for key = {k}, found {type(v)}. Use `use_default_function=True` to use a default function instead."
                 )
 
-        verify_type(_bullets, (Bullets, Bulletable))
+        verify_type(restart_after_action, bool)
+        verify_type(bracketing, str)
+        verify_type(use_default_function, bool)
         verify_type(input_converter, Callable)
+        verify_type(greeting, str)
 
         self.action_prompt_map = action_prompt_map
         self.prompts: list[str] = list(action_prompt_map.keys())
@@ -54,6 +58,7 @@ class Menu:
         self.bracketing: str = bracketing
         self.converter: Callable[[str], str] = input_converter
         self.greeting = greeting
+        self.restart_after_action = restart_after_action
 
     def get_verified_input(self) -> str:
         """Gets user input that is guaranteed to be one of the bullets.
@@ -72,7 +77,7 @@ class Menu:
     def run(self) -> Any:
         """Runs the menu. Prints out the greeting, options, gets a verified user input, and performs the associated action.
 
-        :returns: The value returned by the function associated to the user's choice.
+        :returns: The value returned by the function associated to the user's choice (provided restart_after_action is False).
         :rtype: Any
         """
         if self.greeting:
@@ -82,4 +87,7 @@ class Menu:
             print(f'{bullet}{self.bracketing} {prompt}')
 
         choice: str = self.get_verified_input()
-        return self.action_prompt_map[self.prompts[self.bullets_as_list.index(choice)]]()
+
+        if not self.restart_after_action:
+            return self.action_prompt_map[self.prompts[self.bullets_as_list.index(choice)]]()
+        self.run()

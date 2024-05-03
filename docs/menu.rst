@@ -4,4 +4,3 @@
 The Menu Class
 ==============
 
-.. autoclass::
