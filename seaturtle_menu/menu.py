@@ -88,6 +88,8 @@ class Menu:
 
         choice: str = self.get_verified_input()
 
+        result = self.action_prompt_map[self.prompts[self.bullets_as_list.index(choice)]]()
+
         if not self.restart_after_action:
-            return self.action_prompt_map[self.prompts[self.bullets_as_list.index(choice)]]()
+            return result
         self.run()
